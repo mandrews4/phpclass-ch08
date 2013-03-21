@@ -1,0 +1,47 @@
+<?php
+  ob_start();
+?><html>
+<head>
+	<title>
+		<?php
+			if (defined('TITLE')) {
+				print TITLE;
+			} else {
+				print 'Yeah yeah yeah! A Beatles fan club!';
+			}
+		?>
+	</title>
+	<link rel="stylesheet" href="css/1.css" type="text/css" media="screen,projection" />
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<p class="description">A Beatles fan club</p>
+		<h1><a href="index.php">All you need is Love! Yeah Yeah Yeah!</a></h1>
+		<ul id="nav">
+		<li><a href="books.php"> L.P.s</a></li>
+		<li><a href="#">Singles</a></li>
+		<li><a href="#">Bio</a></li>
+		<li><a href="login.php"> Login</a></li>
+		<li><a href="register.php"> Register</a></li>
+		</ul>
+	</div><!-- header -->
+
+	<div id="sidebar">
+		<h2>Beatle facts</h2>
+		<p class="news">Each of the fab four were born in Liverpool.</p>
+		<p class="news">John Lennon named the group <strong>The Beatles</strong> based on two influences:<br /></p>
+		<ul>
+			<li>Buddy Holly's Crickets</li>
+			<li>The theme of <strong>Beat</strong> music</li>
+		</ul>
+		<p><?php
+		date_default_timezone_set('Canada/Eastern');
+		print date('G:i m/d/Y');
+		?></p>
+
+	</div><!-- sidebar -->
+
+	<div id="content">
+	<!-- BEGIN CHANGEABLE CONTENT. -->
