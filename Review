@@ -1,0 +1,83 @@
+Q1 What is the difference between include() and required()?
+A  Both functions perform the same basic task, but react differently
+   if the included file does not exist.
+
+   If the include() function attempts to include a non-existent file,
+   processing of the php script that executes the include() function
+   continues after generating a warning message.
+
+   If the require() function attempts to include a non-existent file,
+   processing of the php script that executes the require() function
+   stops immediately and generates a fatal E_COMPILE_ERROR level error.
+
+Q2 Why can you put PHP code into an included file even when it uses an
+   .html extension?
+A  The suffix (or extension) of an included file (aka a template) is not
+   relevant. As long as the master file that includes that template file
+   has a .php extension, the web server will be able to interpret and
+   act on any php either within the master file or any files that are
+   included.
+
+Q3 What are the differences between relative and absolute references
+   to a file?
+A  Relative references to a file are taken in reference to the current
+   directory or a parent directory of the current directory.
+
+   Absolute references are full pathnames, taken from the root of a
+   file system such as / in a *nix system and C:\ in a windows system.
+
+Q4 How do you define a constant? Are constant names case-sensitive or
+   case-insensitive? How do you check if a constant has been defined?
+A  You define a constant using the define() function:
+
+   define(constant, value);
+
+   Constant names atre case sensitive. The constants CURR and curr are
+   different constants.
+
+   You use the defined() function to check if a constant has been defined:
+
+   if (define('CONSTANT')) {
+   // do stuff
+   }
+
+Q5 What is the epoch? What is a timestamp?
+A  The epoch is the dawn of time in computer-speak. In written format,
+   it is the time 00:00:00 UTC on 1 January 1970.
+
+   A timestamp is the number of elapsed seconds since the epoch.
+
+Q6 What is the significance of $_SERVER['REQUEST_METHOD']?
+A  The value of $_SERVER['REQUEST_METHOD'] can be evaluated in a php
+   script to determine the path of control when displaying a form to
+   a user or processing the contents of a submitted form.
+
+   If the value of the array element is the string POST, it may be used
+   to indicate that a user has completed a form and submitted it for
+   evaluation and processing.
+
+   If the value of the array element is the string GET, it may be used
+   to display a customized form which prompts a user for the desired
+   information prior to submission and post-processing.
+
+Q7 How do you have a form element “remember” previously submitted values?
+A  When a user submits a form for the first (or on a subsequent) time using
+   the POST method, the _POST[] array is populated with the text information
+   that they submitted.
+
+   The php script can be written in such a way to populate the fields of
+   a form with the last-entered values provided by the user, taken from
+   fields of the $_POST[] array, giving the illusion that the form
+   "remembered" the previous submitted values.
+
+Q8 How can you see a PHP error that occurs within a form element (e.g.,
+   when presetting a form’s element’s value)?
+A  Viewing the html source of the php script allows you to see the errors
+   within a form element.
+
+Q9 What does the “headers already sent” error mean? How can it be prevented?
+A  The “headers already sent” error means that your code is trying to modify
+   HTTP header information after the web browser any data from the web server
+   during that particular session.
+
+   It can be prevented by using output buffering.
