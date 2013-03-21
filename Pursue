@@ -1,0 +1,22 @@
+Q1 Create a new prototype design for this chapter’s examples, and then
+   create new header and footer files. View any of the site’s pages again
+   (you should not need to change
+   any of the PHP scripts).
+A  See header.html & footer.html
+
+Q2 Change the parameters to the date() function in header.html to display
+   the date and/or time in a different manner.
+A  See header.html
+
+Q3 Rewrite the password conditionals found in register.php as a nested pair
+   of conditionals.
+A  See register.php
+
+Q4 If you’re using PHP 5.2 or later, check out the PHP manual pages for the
+   Filter extension. Then incorporate the filter_var() function to validate
+   the email address in register.php.
+A  See register.php
+
+Q5 Change the subject and body of the email sent upon (pseudo-) registration
+   to something more interesting and informative.
+A  See register.php
